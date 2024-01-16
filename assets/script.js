@@ -10,7 +10,7 @@ THEN the game is over
 WHEN the game is over
 THEN I can save my initials and my score */
 
-/* Created an array of questions for the quiz */
+// Created an array of questions for the quiz
 var theQuestions = [
   {
     question: "What is JavaScript?",
@@ -175,7 +175,57 @@ function endQuiz() {
   scoreContainer.classList.remove("hide");
   feedbackContainer.classList.add("hide");
   Timer.classList.add("hide");
+
+  // This prompts the user to enter their initials
+  const initials = prompt("Enter your initials:");
+
+  // This creates an object to store the user's score and initials
+  const userScore = {
+    initials: initials,
+    score: score,
+  };
+
+  // This retrieves the scores from localStorage if there are any
+  let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+
+  // Adds the current user's score to the end of the array
+  highScores.push(userScore);
+
+  // Sorts the scores in descending order so the highest score is at the top
+  highScores.sort((a, b) => b.score - a.score);
+
+  // Saves the updated scores back to localStorage
+  localStorage.setItem("highScores", JSON.stringify(highScores));
 }
+
+function displayHighScores() {
+  const highScoresList = document.getElementById("high-scores-list");
+  highScoresList.innerHTML = "";
+
+  // this retrieves the scores from localStorage
+  const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+
+  // Loops through the scores and creates a list to display them
+  highScores.forEach((score, index) => {
+    const listItem = document.createElement("li");
+    listItem.classList.add("list-group-item");
+    listItem.textContent = `${index + 1}. ${score.initials}: ${score.score}`;
+    highScoresList.appendChild(listItem);
+  });
+
+  // Shows the highest scores in descending order
+  const highScoresSection = document.querySelector(".high-scores");
+  highScoresSection.classList.remove("hide");
+}
+
+// This function clears the high scores from localStorage
+function clearHighScores() {
+  localStorage.removeItem("highScores");
+  displayHighScores();
+}
+
+// Calls the displayHighScores function to show the scores
+displayHighScores();
 
 // This function starts the timer and also displays the timer
 function startTimer() {
@@ -191,3 +241,7 @@ function startTimer() {
 
 // This listens for the start button to be clicked
 startButton.addEventListener("click", startQuiz);
+
+// This listens for the clear high scores button to be clicked
+const clearHighScoresButton = document.querySelector(".high-scores button");
+clearHighScoresButton.addEventListener("click", clearHighScores);

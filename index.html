@@ -38,7 +38,7 @@
         </div>
       </section>
 
-      <div class="container text-center feedback hide"></div>
+      <section class="container text-center feedback hide"></section>
 
       <section class="question-container card text-center m-4 hide">
         <h2 class="question card-header"></h2>
@@ -46,6 +46,18 @@
       </section>
 
       <section class="container text-center score hide"></section>
+
+      <section class="card text-center m-4 p-4 high-scores hide">
+        <h1 class="card-header">High Scores</h1>
+        <div class="card-body">
+          <div class="d-grid col-6 mx-auto">
+            <button class="btn btn-danger" type="button">
+              Clear High Scores
+            </button>
+          </div>
+          <ul class="list-group list-group-flush" id="high-scores-list"></ul>
+        </div>
+      </section>
     </main>
 
     <script src="./assets/script.js"></script>
