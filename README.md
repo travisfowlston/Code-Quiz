@@ -1,5 +1,7 @@
 # JavaScript Code Quiz
 
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
 ## Project Description
 
 The Module 4 Challenge objective was to build a timed coding quiz with multiple-choice questions. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code. It will have a clean, polished, and responsive user interface.
