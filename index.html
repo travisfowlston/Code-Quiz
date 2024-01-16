@@ -7,7 +7,6 @@
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
     <link
@@ -17,30 +16,17 @@
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <!-- GIVEN I am taking a code quiz
-WHEN I click the start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and my score -->
-
-    <!-- Added a header -->
     <header class="p-5 mb-4 text-center header">
       <h1 class="display-1"><strong>JavaScript Code Quiz</strong></h1>
+      <div id="timer" class="mt-4"></div>
     </header>
 
-    <!-- Added a main element to hold the instructions to the game -->
-    <main class="p-4 mb-5 text-center header">
-      <section class="card">
+    <main>
+      <section class="card text-center m-4 p-4">
         <h1 class="card-header">How to play!</h1>
         <div class="card-body">
           <p class="card-text">
-            This is a multiple choice, timed quiz that will test your knowledge
+            This is a multiple-choice, timed quiz that will test your knowledge
             on JavaScript. Any incorrect answers will result in additional time
             being taken off of the clock. You may save your results with your
             initials when the game is over. When you are ready, simply click the
@@ -51,6 +37,15 @@ THEN I can save my initials and my score -->
           </div>
         </div>
       </section>
+
+      <div class="container text-center feedback hide"></div>
+
+      <section class="question-container card text-center m-4 hide">
+        <h2 class="question card-header"></h2>
+        <div class="options d-grid gap-3 col-6 mx-auto mb-4 mt-4"></div>
+      </section>
+
+      <section class="container text-center score hide"></section>
     </main>
 
     <script src="./assets/script.js"></script>
