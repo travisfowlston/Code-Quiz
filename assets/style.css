@@ -26,6 +26,12 @@ h6 {
   font-weight: 700;
 }
 
+.btn:hover {
+  transform: 1.05;
+  transition: 0.3s;
+  color: var(--light) !important;
+}
+
 .correct {
   background-color: green;
   color: var(--light);

@@ -22,40 +22,48 @@
     </header>
 
     <main>
-      <section class="card text-center m-4 p-4">
-        <h1 class="card-header">How to play!</h1>
-        <div class="card-body">
-          <p class="card-text">
-            This is a multiple-choice, timed quiz that will test your knowledge
-            on JavaScript. Any incorrect answers will result in additional time
-            being taken off of the clock. You may save your results with your
-            initials when the game is over. When you are ready, simply click the
-            START button and the game will begin. Good luck!
-          </p>
-          <div class="d-grid col-6 mx-auto">
-            <button class="btn btn-primary" type="button">START</button>
+      <!-- Question Container -->
+      <section class="container mt-4 mb-4">
+        <div class="card text-center">
+          <h1 class="card-header">How to play!</h1>
+          <div class="card-body">
+            <p class="card-text">
+              This is a multiple-choice, timed quiz that will test your
+              knowledge on JavaScript. Any incorrect answers will result in
+              additional time being taken off of the clock. You may save your
+              results with your initials when the game is over. When you are
+              ready, simply click the START button and the game will begin. Good
+              luck!
+            </p>
+            <div class="d-grid col-4 mx-auto">
+              <button class="btn btn-primary" type="button">START!</button>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="container text-center feedback hide"></section>
+      <section class="container mt-4 mb-4 text-center feedback hide"></section>
 
-      <section class="question-container card text-center m-4 hide">
-        <h2 class="question card-header"></h2>
-        <div class="options d-grid gap-3 col-6 mx-auto mb-4 mt-4"></div>
+      <section class="container mt-4 mb-4">
+        <div class="question-container card text-center hide">
+          <h2 class="question card-header"></h2>
+          <div class="options d-grid gap-3 col-6 mx-auto mb-4 mt-4"></div>
+        </div>
       </section>
 
-      <section class="container text-center score hide"></section>
+      <section class="container mb-4 mt-4 text-center score hide"></section>
 
-      <section class="card text-center m-4 p-4 high-scores hide">
-        <h1 class="card-header">High Scores</h1>
-        <div class="card-body">
-          <div class="d-grid col-6 mx-auto">
-            <button class="btn btn-danger" type="button">
-              Clear High Scores
-            </button>
+      <section class="container mt-4 mb-4">
+        <div class="card text-center high-scores hide">
+          <h1 class="card-header">High Scores</h1>
+          <div class="card-body">
+            <div class="d-grid col-4 mx-auto">
+              <button class="btn btn-danger" type="button">
+                Clear Scores!
+              </button>
+            </div>
+            <ul class="list-group list-group-flush" id="high-scores-list"></ul>
           </div>
-          <ul class="list-group list-group-flush" id="high-scores-list"></ul>
         </div>
       </section>
     </main>
